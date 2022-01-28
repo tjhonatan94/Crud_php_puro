@@ -1,4 +1,31 @@
+<?php
+    //print_r($_POST);
+  
+    $txtId=(isset($_POST['txtId']))?$_POST['txtId']:"";
+    $txtNombre=(isset($_POST['txtNombre']))?$_POST['txtNombre']:"";
+    $txtApellidoP=(isset($_POST['txtApellidoP']))?$_POST['txtApellidoP']:"";
+    $txtApellidoM=(isset($_POST['txtApellidoM']))?$_POST['txtApellidoM']:"";
+    $txtCorreo=(isset($_POST['txtCorreo']))?$_POST['txtCorreo']:"";
+    $txtFoto=(isset($_POST['txtFoto']))?$_POST['txtFoto']:"";
 
+    $accion=(isset($_POST['accion']))?$_POST['accion']:"";
+    switch ($accion) {
+        case 'bntAgregar':
+            echo "presionaste el boton agregar". "</br>";
+            
+            break;
+        case 'bntModificar':
+            echo "presionaste el boton modificar";
+            break;
+        case 'bntEliminar':
+            echo "presionaste el boton eliminar";
+            break;
+        case 'bntCancelar':
+            echo "presionaste el boton cancelar";
+            break;
+
+    }
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,22 +38,22 @@
     <div class="container">
         <form action="" method="post" ectype="multipart/form-data">
         <label for="">Id</label>
-        <input type="text" name="txtId" placeholder="" id="txt1" require="">
+        <input type="text" name="txtId" value="<?php echo "$txtId";?>" placeholder="" id="txt1" require="">
         <br>
         <label for="">Nombre(s)</label>
-        <input type="text" name="txtNombre" placeholder="" id="txt2" require="">
+        <input type="text" name="txtNombre" value="<?php echo "$txtNombre";?>" placeholder="" id="txt2" require="">
         <br>
         <label for="">Apellido Paterno</label>
-        <input type="text" name="txtApellidoP" placeholder="" id="txt3" require="">
+        <input type="text" name="txtApellidoP" value="<?php echo "$txtApellidoP";?>" placeholder="" id="txt3" require="">
         <br>
         <label for="">Apellido Materno</label>
-        <input type="text" name="txtAoellidoM" placeholder="" id="txt4" require="">
+        <input type="text" name="txtApellidoM" value="<?php echo "$txtApellidoM";?>" placeholder="" id="txt4" require="">
         <br>
         <label for="">Correo</label>
-        <input type="text" name="txtCorreo" placeholder="" id="txt5" require="">
+        <input type="text" name="txtCorreo" value="<?php echo "$txtCorreo";?>" placeholder="" id="txt5" require="">
         <br>
         <label for="">Foto</label>
-        <input type="text" name="txtFoto" placeholder="" id="txt6" require="">
+        <input type="text" name="txtFoto" value="<?php echo "$txtFoto";?>" placeholder="" id="txt6" require="">
         <br>
 
         <button value="bntAgregar" type="submit" name="accion">Agregar</button>
